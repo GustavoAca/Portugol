@@ -1,40 +1,36 @@
 programa
 {
-	inclua biblioteca Matematica --> mat
+	inclua biblioteca Matematica
+ --> mat
 	
 	funcao inicio()
 	{
-	 /*
-	 	O custo ao consumidor de um carro novo é a soma do custo de fábrica com a
-		percentagem do distribuidor e dos impostos (aplicados ao custo de fábrica).
-		Supondo que a percentagem do distribuidor seja de 28% e os impostos de 45%,
-		escrever um sistema que leia o custo de fábrica de um carro e escreva o custo ao
-		consumidor.
-	 */
+	inteiro horas = 0,minutos = 0,segundos = 0, tempoTrabalho = 0
+
+		escreva("Insira o  tempo trabalhado(EM SEGUNDOS): ")
+		leia(tempoTrabalho)
 
 
-	real valorDist, valorImpost, valorReal, valorTotal
-
-		escreva("Valor de fabrica: ")
-		leia(valorReal)
-
+	se(tempoTrabalho < 60){
+		escreva("Tempo trabalhado é de ",  tempoTrabalho, " segundos")
+	} senao{
 	
-
-
-		valorDist = (28 * valorReal) / 100
-
-		valorImpost = (45 * valorReal) / 100
-
-		valorTotal = mat.arredondar(Soma(valorDist,valorImpost, valorReal), 2)
-
-		escreva("Custo de fabricação é de: ",valorReal)
-		escreva("\nCusto total: ", valorTotal)
-	 
-	}
-
-
-	funcao real Soma(real x, real y, real z){
-		retorne x + y + z
+			se(tempoTrabalho < 3600){
+				minutos = tempoTrabalho / 60
+				segundos = tempoTrabalho % 60
+		
+				escreva("Tempo trabalhado é de ", horas, " horas, ", minutos, " minutos e ", segundos, " segundos")
+			}senao {
+				horas = tempoTrabalho / 3600
+				minutos = tempoTrabalho % 3600
+				segundos = tempoTrabalho % 60
+				minutos = minutos/60
+		
+				escreva("Tempo trabalhado é de ", horas, " horas, ", minutos, " minutos e ", segundos, " segundos")
+			}
+	
+		}
+	
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -42,9 +38,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 411; 
+ * @POSICAO-CURSOR = 531; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {valorDist, 16, 6, 9}-{valorImpost, 16, 17, 11}-{valorReal, 16, 30, 9};
+ * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
- */
+ */ 
