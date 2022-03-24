@@ -1,1 +1,313 @@
-a
+EXERCICIO 1
+
+programa
+{
+	
+	funcao inicio()
+	{
+		/*
+			João, homem de bem, comprou um microcomputador para controlar o rendimento diário
+			de seu trabalho. Toda vez que ele traz um peso de tomate maior que o estabelecido pelo
+			regulamento do estado de São Paulo (50 quilos) deve pagar um multa de R$ 4,00 por quilo
+			excedente. João precisa que você faça um sistema que leia a variável P (peso de tomates) e
+			verifique se há excesso. Se houver, gravar na variável E (Excesso) e na variável M o valor
+			da multa que João deverá pagar. Caso contrário mostrar tais variáveis com o conteúdo
+			ZERO.
+		*/
+
+		real P, M , E
+		P = 40.00
+		E = 0.0
+		M = 0.0
+		se (P >= 50){
+			E = P - 50.00
+			M = E * 4.00
+
+			escreva("O valor da multa é de ", M, " Pois passou ",E, " kg do limite")
+		}
+		senao{
+			escreva("Não passou do limite")
+			escreva("\nO peso foi de ", P)
+			escreva("\nTotalizando " , E, " de excesso e " , M, " de multa")
+		}
+		
+	}
+}
+
+
+EXERCICIO 2
+
+programa
+{
+	
+	funcao inicio()
+	{
+		/*
+		Elabore um sistema que leia as variáveis C e N, respectivamente código e número de
+		horas trabalhadas de um operário. E calcule o salário sabendo-se que ele ganha R$ 10,00
+		por hora. Quando o número de horas exceder a 50 calcule o excesso de pagamento
+		armazenando-o na variável E, caso contrário zerar tal variável. A hora excedente de
+		trabalho vale R$ 20,00. No final do processamento imprimir o salário total e o salário
+		excedente.
+		*/
+		real C, N, E, S
+		C = 0.0
+		N = 56.0
+		E = 0.0
+
+		escreva("Insira o codigo ")
+		leia(C)
+
+		escreva("Insira o numero de horas trabalhadas ")
+		leia(N)
+
+
+		E = N - 50
+
+		se (E > 0){
+			C = N * 10
+			E = E * 20
+			S = C + E	
+
+			escreva(" O salario é de ", S, " sendo " , E, " de horas extras")
+		}
+		senao{
+			E = 0.0
+			S = N  * 10
+			escreva("Salario de: ", S)
+		}
+		
+		
+	}
+}
+
+
+
+EXERCICIO 3
+
+
+programa
+{
+	inclua biblioteca Matematica
+ --> mat
+	
+	funcao inicio()
+	{
+		/*
+			Desenvolva um sistema em que:
+		Leia 4 (quatro) números;
+		Calcule o quadrado de cada um;
+		Se o valor resultante do quadrado do terceiro for &gt;= 1000, imprima-o e finalize;
+		Caso contrário, imprima os valores lidos e seus respectivos quadrados.
+		*/
+
+		inteiro n1,n2,n3,n4
+
+		escreva("Insira o valor 1: ")
+		leia(n1)
+		
+		escreva("Insira o valor 2: ")
+		leia(n2)
+		
+		escreva("Insira o valor 3: ")
+		leia(n3)
+
+		escreva("Insira o valor 4: ")
+		leia(n4)
+
+		n1 = mat.potencia(n1, 2)
+		n2 = mat.potencia(n2, 2)
+		n3 = mat.potencia(n3, 2)
+		n4 = mat.potencia(n4, 2)
+
+		se (n3 >= 1000){
+			escreva(n3)
+		}
+		senao{
+			escreva(n1,"\n")
+			escreva(n2,"\n")
+			escreva(n3,"\n")
+			escreva(n4,"\n")
+		}
+	}
+}
+
+
+EXERCICIO 4
+
+programa
+{
+	inclua biblioteca Matematica
+ --> mat
+	
+	funcao inicio()
+	{
+		/*
+			Faça um sistema que leia um número inteiro e mostre uma mensagem indicando se este
+			número é par ou ímpar, e se é positivo ou negativo.
+		*/
+
+		inteiro numero = -10
+
+		se(numero > 0){
+				se (numero % 2 == 0){
+					escreva("numero par e positivo")
+				}
+				senao{
+					escreva("numero impar e positivo")
+				}
+		}
+		
+
+		senao{
+			se (numero % 2 == 0){
+					escreva("numero par e negativo")
+				}
+				senao{
+					escreva("numero impar e negativo")
+				}
+			
+		}
+	}
+}
+
+EXERCICIO 5
+
+
+programa
+{
+	
+	funcao inicio()
+	{
+		/*
+		
+		5) A Secretaria de Meio Ambiente que controla o índice de poluição mantém 3 grupos de
+		indústrias que são altamente poluentes do meio ambiente. O índice de poluição aceitável
+		varia de 0,05 até 0,25. Se o índice sobe para 0,3 as indústrias do 1º grupo são intimadas a
+		suspenderem suas atividades, se o índice crescer para 0,4 as industrias do 1º e 2º grupo são
+		intimadas a suspenderem suas atividades, se o índice atingir 0,5 todos os grupos devem ser
+		notificados a paralisarem suas atividades. Faça um sistema que leia o índice de poluição
+		medido e emita a notificação adequada aos diferentes grupos de empresas.
+		
+		*/
+
+		real poluente
+
+		escreva("Insira o indice de poluente: ")
+		leia(poluente)
+
+		se (poluente >= 0.26 e poluente <=0.39 ){
+			escreva("As industrias do 1 grupo são intimadas a sustepender atividade")
+		}
+		se(poluente > 0.4 e poluente <= 0.49){
+			escreva("As industrias do 1 e 2 grupo são intimadas a sustepender atividade")
+		}
+		se(poluente >= 0.5){
+			escreva("As industrias de todos os grupos são intimadas a sustepender atividade")
+		}
+		senao{
+			escreva("As atividades estão normais")
+		}
+		
+		
+	}
+}
+
+
+EXERCICIO 6
+
+programa
+{
+	
+	funcao inicio()
+	{
+		/*
+
+		Elabore um sistema que dada a idade de um nadador classifique-o em uma das seguintes
+		categorias:
+		Infantil A = 5 a 7 anos
+		Infantil B = 8 a 11 anos
+		Juvenil A = 12 a 13 anos
+		Juvenil B = 14 a 17 anos
+		Adultos = Maiores de 18 anos
+		*/
+
+		inteiro idade
+
+		escreva("insira a idade: ")
+		leia(idade)
+
+		se(idade >= 5 e idade <= 7){
+			escreva("Infantil A")
+		}
+		se(idade >= 8 e idade <= 11){
+			escreva("Infantil B")
+		}
+		se(idade >= 12 e idade <= 13){
+			escreva("Juvenil A")
+		}
+		se(idade >= 14 e idade <=17){
+			escreva("Juvenil B")
+		}
+		se(idade >= 18){
+			escreva("Adulto")
+		}
+	}
+}
+
+
+EXERCICIO 7
+
+programa
+{
+	
+	funcao inicio()
+	{
+		/*
+			Receber valores de base e altura de um triângulo e verificar se são valores válidos
+			(positivos maiores que zero). Em caso afirmativo, calcular a área do triângulo.
+		*/
+
+		inteiro b, h ,A
+
+		escreva("Insira a base do tringulo: ")
+		leia(b)
+
+		escreva("Insira a altura do triangulo: ")
+		leia(h)
+		
+
+		se((b > 0) e (h > 0)){
+			A = (b * h) / 2
+			escreva("A área do triangulo é ",A)
+		}
+	}
+}
+
+
+EXERCICIO 8
+
+programa
+{
+	
+	funcao inicio()
+	{
+		/*
+		8) Construa um sistema para ler uma variável numérica N e imprimi-la somente se a mesma
+		for maior que 100, caso contrário imprimi-la com o valor zero.
+		*/
+
+		inteiro N
+
+		escreva("Insira o valor de N: ")
+		leia(N)
+
+		se(N > 100){
+			escreva(N)
+		}
+		senao{
+			escreva("Infelizmente, o numero não atingiu o que esperavamos, entao em vez de ",N)
+			escreva("\nVamos imprimir ", N=0)
+		}
+	}
+}
