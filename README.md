@@ -8,6 +8,7 @@ Aula  | Data | Assunto
 :---------: | :------: | :---------:
 Aula 1 | 23/03/2022 | Introdução
 Aula 2 | 24/03/2022 | Condicional
+Aula 3 | 25/09/2022 | Laço de repetição
 
 ## Como rodar o código
 
