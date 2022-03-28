@@ -8,7 +8,8 @@ Aula  | Data | Assunto
 :---------: | :------: | :---------:
 Aula 1 | 23/03/2022 | Introdução
 Aula 2 | 24/03/2022 | Condicional
-Aula 3 | 25/09/2022 | Laço de repetição
+Aula 3 | 25/03/2022 | Laço de repetição
+Aula 4 | 28/03/2022 | Vetor e Matriz
 
 ## Como rodar o código
 
