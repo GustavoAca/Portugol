@@ -1,1 +1,189 @@
-s
+EXERCICIO 1
+
+programa
+{
+	
+/*
+	Faça um programa que crie um vetor por leitura com 5 valores de pontuação de uma
+	atividade e o escreva em seguida. Encontre após a maior pontuação e a apresente.
+	*/
+	
+	funcao inicio()
+	{
+		inteiro vetor[4] = {1,3,6,4}, maiorNum = 0
+
+		para(inteiro i = 0; i < 4; i++){
+			escreva("Insira o valor ",i +1, ": ")
+			leia(vetor[i])
+			
+			se(vetor[i] > maiorNum){
+				maiorNum = vetor[i]
+			}
+			
+			
+		}
+		para(inteiro i = 0; i < 4; i++){
+			escreva(" ",vetor[i],"\t")
+		}
+		
+		escreva("\nMaior numero é: ", maiorNum)
+	}
+}
+
+
+EXERCICIO 2
+
+programa
+{
+	inclua biblioteca Util
+ --> random
+	
+/*
+		Um dado é lançado 10 vezes e o valor correspondente é anotado. Faça um programa
+		que gere um vetor com os lançamentos, escreva esse vetor. A seguir determine e
+		imprima a média aritmética dos lançamentos, contabilize e apresente também
+		quantas foram as ocorrências da maior pontuação.
+	*/
+	funcao inicio()
+	{
+		inteiro lancamento[10],media = 0, maior = 0, contador = 0
+		
+		
+
+		para(inteiro i = 0; i < 10; i++){
+			
+			/* zona de teste
+			 
+			lancamento[i]  = random.sorteia(1, 6)
+			//sortei de 1 a 6
+				
+			
+			*/
+			escreva("Insira o numero do dado: ")
+			leia(lancamento[i])
+			
+			//determina o maior valor
+			se(lancamento[i] > maior){
+				maior = lancamento[i]
+			}
+			
+			//media
+			media +=lancamento[i]
+
+		}
+
+		para(inteiro i = 0; i < 10; i++){
+			se(lancamento[i] == maior){
+				contador++
+			}
+			escreva(lancamento[i], "\t")
+		}
+		
+		escreva("\n\nO maior numero apareceu ", contador, " vezes\n")
+		escreva("\nA media é ", media / 10)
+
+	}
+}
+
+
+
+EXERCICIO 3
+
+programa
+{
+	inclua biblioteca Util
+ --> aleatorio
+	
+	/*
+		Escreve um programa que lê duas matrizes N1 (4,6) e N2(4,6) e cria:
+		a) Uma matriz M1 cujos elementos serão as somas dos elementos de mesma posição
+		das matrizes N1 e N2;
+		b) Uma matriz M2 cujos elementos serão as diferenças dos elementos de mesma
+		posição das matrizes N1 e N2.
+		
+				
+		*/
+	
+	funcao inicio()
+	{
+		inteiro N1[4][6], N2[4][6], M1[4][6], M2[4][6]
+		
+		//Insere os numero na matriz N1
+		para(inteiro linha = 0; linha < 4; linha++){
+			para(inteiro coluna = 0; coluna < 6; coluna++){
+				//Coloca dados aleatorios
+				N1[linha][coluna] = aleatorio.sorteia(0, 10)
+			}
+		}
+
+			//Insere os numero na matriz N2
+		para(inteiro linha = 0; linha < 4; linha++){
+			para(inteiro coluna = 0; coluna < 6; coluna++){
+				//Coloca dados aleatorios
+				N2[linha][coluna] = aleatorio.sorteia(0, 10)
+			}
+		}
+
+		para(inteiro linha = 0; linha < 4; linha++){
+			para(inteiro coluna = 0; coluna < 6; coluna++){
+				/*efetua a soma da n1 + n2, exemplo
+				
+					m1[1][1] = n1[1][1] + n2[1][1]
+				*/
+				
+				M1[linha][coluna] = N1[linha][coluna] + N2[linha][coluna]
+			}
+		}
+
+		para(inteiro linha = 0; linha < 4; linha++){
+			para(inteiro coluna = 0; coluna < 6; coluna++){
+				/*efetua a subtração da n1 - n2, exemplo
+				
+					m1[1][1] = n1[1][1] - n2[1][1]
+				*/
+				
+				M2[linha][coluna] = N1[linha][coluna] - N2[linha][coluna]
+			}
+		}
+
+		
+	}
+}
+
+EXERCICIO 4
+
+programa
+{
+	inclua biblioteca Util
+ --> ale
+	
+	/*
+		Crie um programa que receba valores do usuário para preencher uma matriz 3X3, e
+		em seguida, exiba a soma dos valores dela e a soma dos valores da primeira
+		diagonal, ou seja, diagonal principal.
+	*/
+	
+	funcao inicio()
+	{
+		inteiro matriz[3][3], somaValorT = 0, somaValorD = 0
+
+		para(inteiro linha = 0; linha < 3; linha++){
+			para(inteiro coluna = 0; coluna < 3; coluna++){
+				escreva("Insira o valor da linha: ", linha, " e o valor da coluna: ", coluna," ") 
+				//esta lendo o valor na linha e na coluna digitado pelo usuario
+				leia(matriz[linha][coluna])
+				escreva("\n")
+
+				//soma de todos os valores
+				somaValorT += matriz[linha][coluna] 
+				
+			//SE linha e coluna forem a mesma fazer soma na diagonal
+			se(linha == coluna){
+					somaValorD += matriz[linha][linha]
+			}
+			}
+		}
+		escreva("A soma de todos os valores é: ",somaValorT)
+		escreva("\nA soma dos valores da coluna é ",somaValorD)
+	}
+}
